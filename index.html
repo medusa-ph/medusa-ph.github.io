@@ -47,6 +47,17 @@
 </head>
 <body id="top" data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 
+	<div id="verification-alert">
+    <p>You must be at least 19 years old to enter this website.</p>
+    <button id="confirmButton" onclick="closeAlert()">Enter</button>
+</div>
+
+<script>
+    function closeAlert() {
+        var verificationAlert = document.getElementById('verification-alert');
+        verificationAlert.style.display = 'none';
+    }
+</script>
 
 <!-- Preloader section -->
 
