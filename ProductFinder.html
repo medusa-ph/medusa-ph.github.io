@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Finder</title>
+<style>
+  /* Add your CSS styles here */
+</style>
+</head>
+<body>
+
+<section id="gallery">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="section-title">
+          <h1>DISPOSABLE VAPES</h1>
+          <!-- Select dropdowns for filtering -->
+          <select id="brandSelect">
+            <option value="">Type of vape?</option>
+            <option value="brand1">Disposable</option>
+            <option value="brand2">E-Juice</option>
+            <!-- Add more options as needed -->
+          </select>
+          <select id="flavorSelect">
+            <option value="">Menthol or Pastry?</option>
+            <option value="flavor1">Menthol (Fruity)</option>
+            <option value="flavor2">Non-menthol (Pastry)</option>
+            <!-- Add more options as needed -->
+          </select>
+          <!-- Button to trigger search -->
+          <button onclick="filterProducts()">Find</button>
+          <!-- Placeholder for filtered results -->
+          <ul id="productList">
+            <li data-brand="brand1" data-flavor="flavor1">
+              <span class="brand">Disposable</span>
+              <span class="flavor">Black Elite pod</span>
+              <!-- Add other details here -->
+            </li>
+            <li data-brand="brand2" data-flavor="flavor2">
+              <span class="brand">Disposable</span>
+              <span class="flavor">Chillax pod</span>
+              <!-- Add other details here -->
+            </li>
+            <!-- Add more products as needed -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Placeholder for filtered results -->
+  <ul id="filteredResults"></ul>
+
+</section>
+
+<script>
+  function filterProducts() {
+    // Get selected options
+    var brand = document.getElementById("brandSelect").value.toLowerCase();
+    var flavor = document.getElementById("flavorSelect").value.toLowerCase();
+    
+    // Get the list items
+    var items = document.querySelectorAll("#productList li");
+
+    // Loop through items and show/hide based on filter criteria
+    items.forEach(function(item) {
+      var itemBrand = item.getAttribute("data-brand").toLowerCase();
+      var itemFlavor = item.getAttribute("data-flavor").toLowerCase();
+
+      if ((brand === '' || itemBrand === brand) && (flavor === '' || itemFlavor === flavor)) {
+        // Show matching items
+        item.style.display = "block";
+      } else {
+        // Hide non-matching items
+        item.style.display = "none";
+      }
+    });
+  }
+</script>
+
