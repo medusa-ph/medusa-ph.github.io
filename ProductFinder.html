@@ -17,28 +17,28 @@
         <div class="section-title">
           <h1>We recommend you:</h1>
           <!-- Select dropdowns for filtering -->
-          <select id="brandSelect">
+          <select id="typeSelect">
             <option value="">Type of vape?</option>
-            <option value="brand1">Disposable</option>
-            <option value="brand2">E-Juice</option>
+            <option value="type1">Disposable</option>
+            <option value="type2">E-Juice</option>
             <!-- Add more options as needed -->
           </select>
-          <select id="flavorSelect">
+          <select id="experienceSelect">
             <option value="">Menthol or Pastry?</option>
-            <option value="flavor1">Menthol (Fruity)</option>
-            <option value="flavor2">Non-menthol (Pastry)</option>
+            <option value="exp1">Menthol (Fruity)</option>
+            <option value="exp2">Non-menthol (Pastry)</option>
             <!-- Add more options as needed -->
           </select>
           <!-- Button to trigger search -->
           <button onclick="filterProducts()">Find</button>
           <!-- Placeholder for filtered results -->
           <ul id="productList">
-            <li data-brand="brand1" data-flavor="flavor1">
+            <li data-brand="type1" data-flavor="exp1">
               <span class="brand">Disposable</span>
               <span class="flavor">Black Elite pod</span>
               <!-- Add other details here -->
             </li>
-            <li data-brand="brand2" data-flavor="flavor2">
+            <li data-brand="type2" data-flavor="exp2">
               <span class="brand">Disposable</span>
               <span class="flavor">Chillax pod</span>
               <!-- Add other details here -->
@@ -58,8 +58,8 @@
 <script>
   function filterProducts() {
     // Get selected options
-    var brand = document.getElementById("brandSelect").value.toLowerCase();
-    var flavor = document.getElementById("flavorSelect").value.toLowerCase();
+    var brand = document.getElementById("typeSelect").value.toLowerCase();
+    var flavor = document.getElementById("experienceSelect").value.toLowerCase();
     
     // Get the list items
     var items = document.querySelectorAll("#productList li");
