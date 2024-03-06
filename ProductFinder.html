@@ -8,7 +8,7 @@
   .flavor {
     display: block; /* Ensures vertical alignment */
     margin-bottom: 10px; /* Adds space between each item */
-}
+  }
 </style>
 </head>
 <body>
@@ -36,8 +36,15 @@
           <!-- Button to trigger search -->
           <button onclick="filterProducts()">Find</button>
           <!-- Placeholder for filtered results -->
-          <ul id="productList">
-            <li data-brand="type1" data-flavor="exp1">
+          <ul id="filteredResults" style="display: none;"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Placeholder for all products -->
+  <ul id="productList">
+<li data-brand="type1" data-flavor="exp1">
               <span class="flavor">Black Elite (Grapes)</span>
               <span class="flavor">Black Elite (Blueberry Ice)</span>
               <span class="flavor">Black Elite (Bubblegum)</span>
@@ -153,27 +160,16 @@
               <span class="flavor">Demonvape 3 mg (Mixed Pastry Nutty Cream)</span>
               <span class="flavor">Demonvape 3 mg (Vanilla Custard Tobacco)</span>
             </li>
-
-            
-            <!-- Add more products as needed -->
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Placeholder for filtered results -->
-  <ul id="filteredResults"></ul>
+  </ul>
 
 </section>
 
 <script>
+  // Ensure filtered results are hidden initially
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("filteredResults").style.display = "none";
+  });
 
-      if (location.pathname.endsWith('.html') && location.pathname !== '/ProductFinder/') {
-        location.href = location.pathname.replace('.html', '');
-    }
-  
-<script>
   function filterProducts() {
     // Get selected options
     var brand = document.getElementById("typeSelect").value.toLowerCase();
@@ -202,3 +198,5 @@
   }
 </script>
 
+</body>
+</html>
