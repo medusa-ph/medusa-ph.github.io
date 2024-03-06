@@ -44,7 +44,8 @@
 
   <!-- Placeholder for all products -->
   <ul id="productList">
-<li data-brand="type1" data-flavor="exp1">
+
+            <li data-brand="type1" data-flavor="exp1">
               <span class="flavor">Black Elite (Grapes)</span>
               <span class="flavor">Black Elite (Blueberry Ice)</span>
               <span class="flavor">Black Elite (Bubblegum)</span>
@@ -160,6 +161,7 @@
               <span class="flavor">Demonvape 3 mg (Mixed Pastry Nutty Cream)</span>
               <span class="flavor">Demonvape 3 mg (Vanilla Custard Tobacco)</span>
             </li>
+
   </ul>
 
 </section>
@@ -168,6 +170,8 @@
   // Ensure filtered results are hidden initially
   document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("filteredResults").style.display = "none";
+    // Clear filtered results on page load
+    document.getElementById("filteredResults").innerHTML = "";
   });
 
   function filterProducts() {
