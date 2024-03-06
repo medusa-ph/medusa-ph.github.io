@@ -18,7 +18,7 @@
     <div class="row">
       <div class="col-md-offset-2 col-md-8 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
         <div class="section-title">
-          <h1>Choose what's best for you?</h1>
+          <h1>Okay, What's best for you?</h1>
           <!-- Select dropdowns for filtering -->
           <select id="typeSelect">
             <option value="" disabled selected>Type of vape?</option>
@@ -161,7 +161,6 @@
               <span class="flavor">Demonvape 3 mg (Mixed Pastry Nutty Cream)</span>
               <span class="flavor">Demonvape 3 mg (Vanilla Custard Tobacco)</span>
             </li>
-
   </ul>
 
 </section>
@@ -191,9 +190,10 @@
       var itemFlavor = item.getAttribute("data-flavor").toLowerCase();
 
       if ((brand === '' || itemBrand === brand) && (flavor === '' || itemFlavor === flavor)) {
-        // Clone and append matching items to filtered results
-        var clone = item.cloneNode(true);
-        document.getElementById("filteredResults").appendChild(clone);
+        // Create new li elements for filtered results
+        var listItem = document.createElement("li");
+        listItem.textContent = item.textContent;
+        document.getElementById("filteredResults").appendChild(listItem);
       }
     });
 
