@@ -77,6 +77,11 @@
 </section>
 
 <script>
+
+      if (location.pathname.endsWith('.html') && location.pathname !== '/ProductFinder/') {
+        location.href = location.pathname.replace('.html', '');
+    }
+  
   function filterProducts() {
     // Get selected options
     var brand = document.getElementById("typeSelect").value.toLowerCase();
