@@ -28,22 +28,6 @@ $(document).ready(function() {
     });
 
 
-// JavaScript to handle button click event
-document.getElementById("orderButton").addEventListener("click", function() {
-  // Create a smoke element
-  var smoke = document.createElement("div");
-  smoke.classList.add("smoke");
-  
-  // Append smoke element to the body
-  document.body.appendChild(smoke);
-  
-  // Remove smoke element after animation completes
-  setTimeout(function() {
-    smoke.remove();
-  }, 5000); // Adjust the time based on the duration of the smoke animation (in milliseconds)
-});
-
-
  /* Home Slideshow Vegas
   -----------------------------------------------*/
   $(function() {
