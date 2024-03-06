@@ -163,7 +163,7 @@
   </div>
 
   <!-- Placeholder for filtered results -->
-  <ul id="filteredResults" style="display: none;></ul>
+  <ul id="filteredResults"></ul>
 
 </section>
 
@@ -173,6 +173,7 @@
         location.href = location.pathname.replace('.html', '');
     }
   
+<script>
   function filterProducts() {
     // Get selected options
     var brand = document.getElementById("typeSelect").value.toLowerCase();
@@ -181,19 +182,23 @@
     // Get the list items
     var items = document.querySelectorAll("#productList li");
 
+    // Clear previous results
+    document.getElementById("filteredResults").innerHTML = "";
+
     // Loop through items and show/hide based on filter criteria
     items.forEach(function(item) {
       var itemBrand = item.getAttribute("data-brand").toLowerCase();
       var itemFlavor = item.getAttribute("data-flavor").toLowerCase();
 
       if ((brand === '' || itemBrand === brand) && (flavor === '' || itemFlavor === flavor)) {
-        // Show matching items
-        item.style.display = "block";
-      } else {
-        // Hide non-matching items
-        item.style.display = "none";
+        // Clone and append matching items to filtered results
+        var clone = item.cloneNode(true);
+        document.getElementById("filteredResults").appendChild(clone);
       }
     });
+
+    // Show the filtered results
+    document.getElementById("filteredResults").style.display = "block";
   }
 </script>
 
