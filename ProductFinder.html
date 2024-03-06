@@ -8,7 +8,7 @@
   .flavor {
     display: block; /* Ensures vertical alignment */
     margin-bottom: 10px; /* Adds space between each item */
-  }
+}
 </style>
 </head>
 <body>
@@ -18,7 +18,7 @@
     <div class="row">
       <div class="col-md-offset-2 col-md-8 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
         <div class="section-title">
-          <h1>Okay, What's best for you?</h1>
+          <h1>What's best for you?</h1>
           <!-- Select dropdowns for filtering -->
           <select id="typeSelect">
             <option value="" disabled selected>Type of vape?</option>
@@ -36,15 +36,7 @@
           <!-- Button to trigger search -->
           <button onclick="filterProducts()">Find</button>
           <!-- Placeholder for filtered results -->
-          <ul id="filteredResults" style="display: none;"></ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Placeholder for all products -->
-  <ul id="productList">
-
+          <ul id="productList">
             <li data-brand="type1" data-flavor="exp1">
               <span class="flavor">Black Elite (Grapes)</span>
               <span class="flavor">Black Elite (Blueberry Ice)</span>
@@ -161,18 +153,27 @@
               <span class="flavor">Demonvape 3 mg (Mixed Pastry Nutty Cream)</span>
               <span class="flavor">Demonvape 3 mg (Vanilla Custard Tobacco)</span>
             </li>
-  </ul>
+
+            
+            <!-- Add more products as needed -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Placeholder for filtered results -->
+  <ul id="filteredResults"></ul>
 
 </section>
 
 <script>
-  // Ensure filtered results are hidden initially
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("filteredResults").style.display = "none";
-    // Clear filtered results on page load
-    document.getElementById("filteredResults").innerHTML = "";
-  });
 
+      if (location.pathname.endsWith('.html') && location.pathname !== '/ProductFinder/') {
+        location.href = location.pathname.replace('.html', '');
+    }
+  
+<script>
   function filterProducts() {
     // Get selected options
     var brand = document.getElementById("typeSelect").value.toLowerCase();
@@ -181,26 +182,18 @@
     // Get the list items
     var items = document.querySelectorAll("#productList li");
 
-    // Clear previous results
-    document.getElementById("filteredResults").innerHTML = "";
-
     // Loop through items and show/hide based on filter criteria
     items.forEach(function(item) {
       var itemBrand = item.getAttribute("data-brand").toLowerCase();
       var itemFlavor = item.getAttribute("data-flavor").toLowerCase();
 
       if ((brand === '' || itemBrand === brand) && (flavor === '' || itemFlavor === flavor)) {
-        // Create new li elements for filtered results
-        var listItem = document.createElement("li");
-        listItem.textContent = item.textContent;
-        document.getElementById("filteredResults").appendChild(listItem);
+        // Show matching items
+        item.style.display = "block";
+      } else {
+        // Hide non-matching items
+        item.style.display = "none";
       }
     });
-
-    // Show the filtered results
-    document.getElementById("filteredResults").style.display = "block";
   }
 </script>
-
-</body>
-</html>
