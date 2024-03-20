@@ -21,6 +21,39 @@ html {
 }
 
 
+
+  .banner {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 9999; /* Ensure it's on top */
+    text-align: center; /* Center the text */
+  }
+  
+  .banner p {
+    margin: 0;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+
+
+
+
 /*---------------------------------------
     Typorgraphy              
 -----------------------------------------*/
