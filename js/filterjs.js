@@ -1,6 +1,6 @@
-$('select').change(function () {
+
     $('.filter').hide();
-});
+
 
 $(".filter-btn").click(function () {
     var type = $(".filter-type option:selected").val();
@@ -15,3 +15,4 @@ $(".filter-btn").click(function () {
 
 
 });
+
