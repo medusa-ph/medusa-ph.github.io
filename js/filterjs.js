@@ -1,5 +1,9 @@
 
-    $('.filter').hide();
+
+$('select').change(function(){
+  $('.filter').hide();
+});
+
 
 
 $(".filter-btn").click(function () {
