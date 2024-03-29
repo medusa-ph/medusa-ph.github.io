@@ -44,8 +44,13 @@ $(document).ready(function () {
 */
 
 $(document).ready(function () {
-  // Hide all items initially
-  $('.filter').hide();
+  // Function to hide all items
+  function hideAllItems() {
+    $('.filter').hide();
+  }
+
+  // Call the function to hide all items when the page is loaded or refreshed
+  hideAllItems();
 
   // Filter button click event
   $(".filter-btn").click(function () {
@@ -54,7 +59,7 @@ $(document).ready(function () {
     var brand = $(".filter-brand option:selected").val();
 
     // Hide all items before applying the filter
-    $('.filter').hide();
+    hideAllItems();
 
     // Show items based on selected options
     if (type !== '0' && brand !== '0') {
