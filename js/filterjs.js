@@ -20,6 +20,7 @@ $(".filter-btn").click(function () {
 });
 */
 
+/*
 $(document).ready(function () {
   // Hide all items initially
   $('.filter').hide();
@@ -39,4 +40,26 @@ $(document).ready(function () {
     }
   });
 });
+*/
+
+$(document).ready(function () {
+  // Hide all items initially
+  $('.filter').hide();
+
+  // Filter button click event
+  $(".filter-btn").click(function () {
+    // Get selected filter options
+    var type = $(".filter-type option:selected").val();
+    var brand = $(".filter-brand option:selected").val();
+
+    // Hide all items before showing filtered items
+    $('.filter').hide();
+
+    // Show items based on selected options
+    if (type !== '0' && brand !== '0') {
+      $('.' + brand + '.' + type).show();
+    }
+  });
+});
+
 
