@@ -45,7 +45,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   // Filter button click event
   $(".filter-btn").click(function () {
-    // Clear previously filtered items
+    // Hide all items before applying the filter
     $('.filter').hide();
 
     // Get selected filter options
@@ -55,6 +55,10 @@ $(document).ready(function () {
     // Show items based on selected options
     if (type !== '0' && brand !== '0') {
       $('.' + brand + '.' + type).show();
+    } else if (type === '0' && brand !== '0') {
+      $('.' + brand).show();
+    } else if (type !== '0' && brand === '0') {
+      $('.' + type).show();
     }
   });
 });
