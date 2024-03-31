@@ -37,31 +37,34 @@
 
 
 
+
+<!--DELETE IF FAILED-->
+	    <div id="popup-container">
+        <div id="popup-content">
+            <h2>Welcome to Our Vape Shop</h2>
+            <p class="message">NOT FOR SALE TO MINORS. VAPE RESPONSIBLY.</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Display the pop-up message after a certain delay (e.g., 2 minutes)
+        setTimeout(function() {
+            document.getElementById('popup-container').style.display = 'block';
+        }, 120000); // 120,000 milliseconds = 2 minutes
+
+        // Function to close the pop-up
+        function closePopup() {
+            document.getElementById('popup-container').style.display = 'none';
+        }
+    </script>
+
+
 	<!-- Preloader section -->
 
 	<div class="preloader">
 		<div class="sk-spinner sk-spinner-pulse"></div>
 	</div>
-
-  <div id="popup-container">
-    <div id="popup-content">
-      <h2>Welcome to Our Vape Shop</h2>
-      <p class="message">NOT FOR SALE TO MINORS. VAPE RESPONSIBLY.</p>
-      <button onclick="closePopup()">Close</button>
-    </div>
-  </div>
-
-  <script>
-    // Display the pop-up message after 2 minutes (120,000 milliseconds)
-    setTimeout(function() {
-      document.getElementById('popup-container').style.display = 'block';
-    }, 120000); // 120,000 milliseconds = 2 minutes
-
-    // Function to close the pop-up
-    function closePopup() {
-      document.getElementById('popup-container').style.display = 'none';
-    }
-  </script>
 
 	
 <!--
