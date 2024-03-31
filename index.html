@@ -36,7 +36,25 @@
 <body id="top" data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 
 
+    <div id="popup-container">
+        <div id="popup-content">
+            <h2>Hey, there!</h2>
+            <p class="message">NOT FOR SALE TO MINORS. VAPE RESPONSIBLY.</p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
 
+    <script>
+        // Display the pop-up message after a certain delay (e.g., 2 minutes)
+        setTimeout(function() {
+            document.getElementById('popup-container').style.display = 'block';
+        }, 2000); // 120,000 milliseconds = 2 minutes
+
+        // Function to close the pop-up
+        function closePopup() {
+            document.getElementById('popup-container').style.display = 'none';
+        }
+    </script>
 
 
 	<!-- Preloader section -->
