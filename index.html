@@ -43,6 +43,27 @@
 		<div class="sk-spinner sk-spinner-pulse"></div>
 	</div>
 
+  <div id="popup-container">
+    <div id="popup-content">
+      <h2>Welcome to Our Vape Shop</h2>
+      <p class="message">NOT FOR SALE TO MINORS. VAPE RESPONSIBLY.</p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Display the pop-up message after 2 minutes (120,000 milliseconds)
+    setTimeout(function() {
+      document.getElementById('popup-container').style.display = 'block';
+    }, 120000); // 120,000 milliseconds = 2 minutes
+
+    // Function to close the pop-up
+    function closePopup() {
+      document.getElementById('popup-container').style.display = 'none';
+    }
+  </script>
+
+	
 <!--
 <script>
     window.alert("NOT FOR SALE TO MINORS. VAPE RESPONSIBLY.");
@@ -901,27 +922,6 @@
 	<script src="js/wow.min.js"></script>
 	<script src="js/custom.js"></script>
 	<script src="js/filterjs.js"></script>
-
-
-  <div id="popup-container">
-    <div id="popup-content">
-      <h2>Welcome to Our Vape Shop</h2>
-      <p class="message">NOT FOR SALE TO MINORS. VAPE RESPONSIBLY.</p>
-      <button onclick="closePopup()">Close</button>
-    </div>
-  </div>
-
-  <script>
-    // Display the pop-up message after 2 minutes (120,000 milliseconds)
-    setTimeout(function() {
-      document.getElementById('popup-container').style.display = 'block';
-    }, 120000); // 120,000 milliseconds = 2 minutes
-
-    // Function to close the pop-up
-    function closePopup() {
-      document.getElementById('popup-container').style.display = 'none';
-    }
-  </script>
 	
 </body>
 
