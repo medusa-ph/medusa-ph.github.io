@@ -638,6 +638,26 @@ footer {
   padding-bottom: 80px;
 }
 
+#importantdetails {
+    list-style-type: none;
+    padding: 0;
+}
+
+#importantdetails li {
+    display: inline;
+    margin: 0 10px;
+}
+
+#importantdetails li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+}
+
+#importantdetails li a:hover {
+    text-decoration: underline;
+}
+
 
 
 /*---------------------------------------
