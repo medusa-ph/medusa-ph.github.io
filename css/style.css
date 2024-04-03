@@ -650,13 +650,14 @@ footer {
 
 #importantdetails li a {
     text-decoration: none;
-    color: #333;
+    color: #fff; /* Change font color to white */
     font-size: 12px;
 }
 
 #importantdetails li a:hover {
     text-decoration: underline;
 }
+
 
 
 
