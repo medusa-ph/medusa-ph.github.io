@@ -45,17 +45,37 @@
 	</div>
 
 	<script>
-		// Display the pop-up message after a certain delay (e.g., 2 minutes)
 		setTimeout(function () {
 			document.getElementById('popup-container').style.display = 'block';
-		}, 2000); // 120,000 milliseconds = 2 minutes
+		}, 2000); 
 
-		// Function to close the pop-up
 		function closePopup() {
 			document.getElementById('popup-container').style.display = 'none';
 		}
 	</script>
 
+
+	<!--second pop up
+
+	<div id="popup-container">
+		<div id="popup-content">
+			<h2>Welcome to Medusa PH!</h2>
+			<p class="message">VAPE BUTU</p>
+			<button onclick="closePopup()">OK</button>
+		</div>
+	</div>
+
+	<script>
+		setTimeout(function () {
+			document.getElementById('popup-container').style.display = 'block';
+		}, 2500); 
+
+		function closePopup() {
+			document.getElementById('popup-container').style.display = 'none';
+		}
+	</script>
+
+	-->
 
 	<!-- Preloader section -->
 
